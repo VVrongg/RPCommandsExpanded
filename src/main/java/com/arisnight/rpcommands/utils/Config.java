@@ -38,8 +38,8 @@ public enum Config {
         List<String> header = new ArrayList<>();
         header.add("");
         header.add("Спасибо за загрузку плагина RPCommandsExpanded / Thank you for downloading the RPCommandsExpanded plugin.");
-        header.add("Этот плагин является форком плагина RPCommands автора ArisNight");
-        header.add("Создан, чтобы закрыть недочёты автора оригинала по мнению VVrongg");
+        header.add("Этот плагин является форком плагина RPCommands автора ArisNight / This plugin is a fork of RPCommands plugin by ArisNight");
+        header.add("Создан, чтобы закрыть недочёты автора оригинала по мнению VVrongg / Created to cover the shortcomings of the original author according to VVrongg");
         header.add("");
         for (Config c : values()) {
             header.add(c.getPath() + ": " + c.getDescription());
