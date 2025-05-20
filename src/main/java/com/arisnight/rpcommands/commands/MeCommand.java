@@ -1,5 +1,6 @@
 package com.arisnight.rpcommands.commands;
 
+import com.arisnight.rpcommands.utils.Config;
 import com.arisnight.rpcommands.utils.Utils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -9,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class MeCommand implements CommandExecutor {
 
-    private final String format = "&6* &7%s %s"; //* ArisNight_ написал этот плагин
+    private final String format = Config.MeCommandFormat.getString(); //* ArisNight_ написал этот плагин
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
@@ -30,7 +31,7 @@ public class MeCommand implements CommandExecutor {
 
         String finalMessage = String.format(format, player.getName(), message);
 
-        Utils.sendMessage(player, 10, finalMessage);
+        Utils.sendMessage(player, Config.Message_Radius.getInt(), finalMessage);
 
         return true;
     }

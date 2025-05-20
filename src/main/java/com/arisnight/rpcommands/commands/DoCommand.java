@@ -1,5 +1,6 @@
 package com.arisnight.rpcommands.commands;
 
+import com.arisnight.rpcommands.utils.Config;
 import com.arisnight.rpcommands.utils.Utils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -9,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class DoCommand implements CommandExecutor {
 
-    private final String format = "&e* &7%s &8(%s)"; // * Видео записывается (ArisNight_)
+    private final String format = Config.DoCommandFormat.getString(); // * Видео записывается (ArisNight_)
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
@@ -30,7 +31,7 @@ public class DoCommand implements CommandExecutor {
 
         String finalMessage = String.format(format, message, player.getName());
 
-        Utils.sendMessage(player, 10, finalMessage);
+        Utils.sendMessage(player, Config.Message_Radius.getInt(), finalMessage);
 
         return true;
     }

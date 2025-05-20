@@ -1,5 +1,6 @@
 package com.arisnight.rpcommands.commands;
 
+import com.arisnight.rpcommands.utils.Config;
 import com.arisnight.rpcommands.utils.Utils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -11,10 +12,10 @@ import java.util.Random;
 
 public class TryCommand implements CommandExecutor {
 
-    private final String format = "&d* &7%s %s [%s]"; //ArisNight_ написал этот плагин [Удачно]
+    private final String format = Config.TryCommandFormat.getString(); //ArisNight_ написал этот плагин [Удачно]
 
-    private final String success = "&aУдачно&7";
-    private final String fail = "&cНеудачно&7";
+    private final String success = Config.TryCommandSuccessful.getString();
+    private final String fail = Config.TryCommandUnsuccessful.getString();
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
@@ -45,7 +46,7 @@ public class TryCommand implements CommandExecutor {
             finalMessage = String.format(format, player.getName(), message, fail);
         }
 
-        Utils.sendMessage(player, 10, finalMessage);
+        Utils.sendMessage(player, Config.Message_Radius.getInt(), finalMessage);
 
         return true;
     }

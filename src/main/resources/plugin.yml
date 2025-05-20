@@ -2,7 +2,7 @@ name: RPCommands
 version: '${version}'
 main: com.arisnight.rpcommands.RPCommands
 api-version: '1.21'
-authors: [ArisNight_]
+authors: [ArisNight_(Original), VVrongg(Fork)]
 website: https://github.com/ArisNight
 commands:
   me:
@@ -11,3 +11,13 @@ commands:
     usage: /do <message>
   try:
     usage: /try <message>
+permissions:
+  rpcommand.do:
+    description: allows you to use the command /do
+    default: true
+  rpcommand.try:
+    description: allows you to use the command /try
+    default: true
+  rpcommand.me:
+    description: allows you to use the command /me
+    default: true
