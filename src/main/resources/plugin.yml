@@ -3,7 +3,7 @@ version: '${version}'
 main: com.arisnight.rpcommands.RPCommands
 api-version: '1.21'
 authors: [ArisNight_(Original), VVrongg(Fork)]
-website: https://github.com/ArisNight
+website: https://github.com/VVrongg/RPCommandsExpanded
 commands:
   me:
     usage: /me <message>
