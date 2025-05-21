@@ -10,7 +10,9 @@ import org.jetbrains.annotations.NotNull;
 
 public class MeCommand implements CommandExecutor {
 
-    private final String format = Config.MeCommandFormat.getString(); //* ArisNight_ написал этот плагин
+    public String getCommandMe(){
+        return Config.MeCommandFormat.getString();
+    }
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
@@ -29,7 +31,7 @@ public class MeCommand implements CommandExecutor {
 
         String message = String.join(" ", args);
 
-        String finalMessage = String.format(format, player.getName(), message);
+        String finalMessage = String.format(getCommandMe(), player.getName(), message);
 
         Utils.sendMessage(player, Config.Message_Radius.getInt(), finalMessage);
 

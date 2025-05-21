@@ -12,10 +12,17 @@ import java.util.Random;
 
 public class TryCommand implements CommandExecutor {
 
-    private final String format = Config.TryCommandFormat.getString(); //ArisNight_ написал этот плагин [Удачно]
+    public String getFormat(){
+        return Config.TryCommandFormat.getString();
+    }
+    public String getSuccessOutput(){
+        return Config.TryCommandSuccessful.getString();
+    }
 
-    private final String success = Config.TryCommandSuccessful.getString();
-    private final String fail = Config.TryCommandUnsuccessful.getString();
+    public String getUnSuccessOutput(){
+        return Config.TryCommandUnsuccessful.getString();
+    }
+
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
@@ -41,9 +48,9 @@ public class TryCommand implements CommandExecutor {
         String finalMessage = "";
 
         if (result){
-            finalMessage = String.format(format, player.getName(), message, success);
+            finalMessage = String.format(getFormat(), player.getName(), message, getSuccessOutput());
         } else {
-            finalMessage = String.format(format, player.getName(), message, fail);
+            finalMessage = String.format(getFormat(), player.getName(), message, getUnSuccessOutput());
         }
 
         Utils.sendMessage(player, Config.Message_Radius.getInt(), finalMessage);

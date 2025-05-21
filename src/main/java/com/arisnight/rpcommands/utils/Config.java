@@ -36,10 +36,10 @@ public enum Config {
         RPCommands.getInstance().getDataFolder().mkdirs();
         reload(false);
         List<String> header = new ArrayList<>();
-        header.add("");
-        header.add("Спасибо за загрузку плагина RPCommandsExpanded / Thank you for downloading the RPCommandsExpanded plugin.");
-        header.add("Этот плагин является форком плагина RPCommands автора ArisNight / This plugin is a fork of RPCommands plugin by ArisNight");
-        header.add("Создан, чтобы закрыть недочёты автора оригинала по мнению VVrongg / Created to cover the shortcomings of the original author according to VVrongg");
+        header.add("Thanks for installing " + RPCommands.getInstance().getName());
+        header.add("Please report any bugs you may encounter at my discord under:");
+        header.add("https://www.thejeterlp.de/discord");
+        header.add("-------------------------------Descriptions--------------------------------------");
         header.add("");
         for (Config c : values()) {
             header.add(c.getPath() + ": " + c.getDescription());

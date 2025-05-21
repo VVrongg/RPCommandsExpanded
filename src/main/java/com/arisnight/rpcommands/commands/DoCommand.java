@@ -10,7 +10,9 @@ import org.jetbrains.annotations.NotNull;
 
 public class DoCommand implements CommandExecutor {
 
-    private final String format = Config.DoCommandFormat.getString(); // * Видео записывается (ArisNight_)
+    public String getCommandDo(){
+        return Config.DoCommandFormat.getString();
+    }
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
@@ -29,7 +31,7 @@ public class DoCommand implements CommandExecutor {
 
         String message = String.join(" ", args);
 
-        String finalMessage = String.format(format, message, player.getName());
+        String finalMessage = String.format(getCommandDo(), message, player.getName());
 
         Utils.sendMessage(player, Config.Message_Radius.getInt(), finalMessage);
 

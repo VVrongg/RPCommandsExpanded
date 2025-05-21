@@ -5,6 +5,8 @@ api-version: '1.21'
 authors: [ArisNight_(Original), VVrongg(Fork)]
 website: https://github.com/VVrongg/RPCommandsExpanded
 commands:
+  rpcommands:
+    description: roleplay commands
   me:
     usage: /me <message>
   do:
@@ -12,6 +14,9 @@ commands:
   try:
     usage: /try <message>
 permissions:
+  rpcommand.reload:
+    description: reload plugin
+    default: false
   rpcommand.do:
     description: allows you to use the command /do
     default: true
