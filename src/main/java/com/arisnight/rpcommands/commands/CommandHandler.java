@@ -24,7 +24,7 @@ public class CommandHandler implements CommandExecutor, TabCompleter {
             return true;
         }else {
             if (strings[0].equalsIgnoreCase("reload")) {
-                if (commandSender.hasPermission("rp.reload")) {
+                if (commandSender.hasPermission("rpcommand.reload")) {
                     Config.reload(true);
                     commandSender.sendMessage("§aRPCommandsExpanded §eReloaded");
                 }
